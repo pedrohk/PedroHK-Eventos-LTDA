@@ -7,10 +7,10 @@ import com.pedrohk.eventos.exception.ResourceNotFoundException;
 import com.pedrohk.eventos.service.EventoService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mock;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.http.MediaType;
+import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import org.springframework.test.web.servlet.MockMvc;
 
 import java.time.LocalDate;
@@ -20,11 +20,10 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.BDDMockito.given;
 import static org.mockito.Mockito.doNothing;
-
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -35,21 +34,10 @@ class EventoControllerTest {
     @Autowired
     private MockMvc mockMvc;
 
-    @Mock
+    @MockitoBean
     private EventoService eventoService;
 
-    @Mock
     private EventoDTO eventoDTO;
-
-    @BeforeEach
-    void setUp() {
-        eventoDTO = EventoDTO.builder()
-                .id(1L)
-                .nome("Conferência de Java")
-                .data(LocalDate.now().plusMonths(1))
-                .local("Online")
-                .build();
-    }
 
     public static String asJsonString(final Object obj) {
         try {
@@ -59,6 +47,16 @@ class EventoControllerTest {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
+    }
+
+    @BeforeEach
+    void setUp() {
+        eventoDTO = EventoDTO.builder()
+                .id(1L)
+                .nome("Conferência de Java")
+                .data(LocalDate.now().plusMonths(1))
+                .local("Online")
+                .build();
     }
 
     @Test
