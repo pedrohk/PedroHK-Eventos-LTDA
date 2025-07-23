@@ -25,8 +25,8 @@ class ParticipanteDTOTest {
     @Test
     void whenAllFieldsAreValid_thenValidationSucceeds() {
         ParticipanteDTO dto = ParticipanteDTO.builder()
-                .nome("Carlos Andrade")
-                .email("carlos.andrade@gmail.org")
+                .nome("Manuel Soares")
+                .email("soares.manuel@gmail.org")
                 .categoria(CategoriaParticipante.CLIENTE)
                 .build();
 
@@ -39,7 +39,7 @@ class ParticipanteDTOTest {
     void whenNomeIsBlank_thenValidationFails() {
         ParticipanteDTO dto = ParticipanteDTO.builder()
                 .nome(" ")
-                .email("carlos.andrade@gmail.org")
+                .email("soares.augusto@gmail.org")
                 .categoria(CategoriaParticipante.CLIENTE)
                 .build();
 
@@ -52,7 +52,7 @@ class ParticipanteDTOTest {
     @Test
     void whenEmailIsInvalid_thenValidationFails() {
         ParticipanteDTO dto = ParticipanteDTO.builder()
-                .nome("Carlos Andrade")
+                .nome("Bruno Torres")
                 .email("email-invalido")
                 .categoria(CategoriaParticipante.CLIENTE)
                 .build();
@@ -66,7 +66,7 @@ class ParticipanteDTOTest {
     @Test
     void whenEmailIsBlank_thenValidationFails() {
         ParticipanteDTO dto = ParticipanteDTO.builder()
-                .nome("Carlos Andrade")
+                .nome("Adriana Tavares")
                 .email("")
                 .categoria(CategoriaParticipante.CLIENTE)
                 .build();
@@ -80,8 +80,8 @@ class ParticipanteDTOTest {
     @Test
     void whenCategoriaIsNull_thenValidationFails() {
         ParticipanteDTO dto = ParticipanteDTO.builder()
-                .nome("Carlos Andrade")
-                .email("carlos.andrade@gmail.org")
+                .nome("Tadeu Andrade")
+                .email("andrade.tadeu@gmail.org")
                 .categoria(null)
                 .build();
 
