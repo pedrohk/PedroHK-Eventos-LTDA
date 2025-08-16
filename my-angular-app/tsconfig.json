@@ -1,34 +1,32 @@
-my-angular-app
-├── src
-│   ├── app
-│   │   ├── components
-│   │   │   ├── header
-│   │   │   │   ├── header.component.ts
-│   │   │   │   ├── header.component.html
-│   │   │   │   └── header.component.css
-│   │   │   └── footer
-│   │   │       ├── footer.component.ts
-│   │   │       ├── footer.component.html
-│   │   │       └── footer.component.css
-│   │   ├── pages
-│   │   │   └── home
-│   │   │       ├── home.component.ts
-│   │   │       ├── home.component.html
-│   │   │       └── home.component.css
-│   │   ├── services
-│   │   │   └── api.service.ts
-│   │   ├── models
-│   │   │   └── index.ts
-│   │   ├── app.component.ts
-│   │   ├── app.component.html
-│   │   ├── app.component.css
-│   │   ├── app.config.ts
-│   │   └── app.routes.ts
-│   ├── assets
-│   ├── styles.css
-│   ├── index.html
-│   └── main.ts
-├── package.json
-├── tsconfig.json
-├── angular.json
-└── README.md
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "./",
+    "outDir": "./dist/out-tsc",
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "noImplicitOverride": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "sourceMap": true,
+    "declaration": false,
+    "downlevelIteration": true,
+    "experimentalDecorators": true,
+    "moduleResolution": "node",
+    "importHelpers": true,
+    "target": "ES2022",
+    "module": "ES2022",
+    "useDefineForClassFields": false,
+    "lib": [
+      "ES2022",
+      "dom"
+    ]
+  },
+  "angularCompilerOptions": {
+    "enableI18nLegacyMessageIdFormat": false,
+    "strictInjectionParameters": true,
+    "strictInputAccessModifiers": true,
+    "strictTemplates": true
+  }
+}

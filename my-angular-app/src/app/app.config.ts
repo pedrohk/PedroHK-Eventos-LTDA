@@ -1,34 +1,18 @@
-my-angular-app
-├── src
-│   ├── app
-│   │   ├── components
-│   │   │   ├── header
-│   │   │   │   ├── header.component.ts
-│   │   │   │   ├── header.component.html
-│   │   │   │   └── header.component.css
-│   │   │   └── footer
-│   │   │       ├── footer.component.ts
-│   │   │       ├── footer.component.html
-│   │   │       └── footer.component.css
-│   │   ├── pages
-│   │   │   └── home
-│   │   │       ├── home.component.ts
-│   │   │       ├── home.component.html
-│   │   │       └── home.component.css
-│   │   ├── services
-│   │   │   └── api.service.ts
-│   │   ├── models
-│   │   │   └── index.ts
-│   │   ├── app.component.ts
-│   │   ├── app.component.html
-│   │   ├── app.component.css
-│   │   ├── app.config.ts
-│   │   └── app.routes.ts
-│   ├── assets
-│   ├── styles.css
-│   ├── index.html
-│   └── main.ts
-├── package.json
-├── tsconfig.json
-├── angular.json
-└── README.md
+import { ApplicationConfig } from '@angular/core';
+import { provideRouter, withViewTransitions } from '@angular/router';
+import { provideAnimations } from '@angular/platform-browser/animations';
+import { provideHttpClient, withInterceptors } from '@angular/common/http';
+
+import { routes } from './app.routes';
+
+export const appConfig: ApplicationConfig = {
+  providers: [
+    provideRouter(routes, withViewTransitions()),
+    provideAnimations(),
+    provideHttpClient(
+      withInterceptors([
+        // Add your HTTP interceptors here if needed
+      ])
+    )
+  ]
+};

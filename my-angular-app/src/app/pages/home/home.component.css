@@ -1,34 +1,86 @@
-my-angular-app
-├── src
-│   ├── app
-│   │   ├── components
-│   │   │   ├── header
-│   │   │   │   ├── header.component.ts
-│   │   │   │   ├── header.component.html
-│   │   │   │   └── header.component.css
-│   │   │   └── footer
-│   │   │       ├── footer.component.ts
-│   │   │       ├── footer.component.html
-│   │   │       └── footer.component.css
-│   │   ├── pages
-│   │   │   └── home
-│   │   │       ├── home.component.ts
-│   │   │       ├── home.component.html
-│   │   │       └── home.component.css
-│   │   ├── services
-│   │   │   └── api.service.ts
-│   │   ├── models
-│   │   │   └── index.ts
-│   │   ├── app.component.ts
-│   │   ├── app.component.html
-│   │   ├── app.component.css
-│   │   ├── app.config.ts
-│   │   └── app.routes.ts
-│   ├── assets
-│   ├── styles.css
-│   ├── index.html
-│   └── main.ts
-├── package.json
-├── tsconfig.json
-├── angular.json
-└── README.md
+.home-container {
+  padding-top: 60px;
+}
+
+.hero {
+  background: linear-gradient(rgba(44, 62, 80, 0.9), rgba(44, 62, 80, 0.9)),
+              url('/assets/images/hero-bg.jpg') center/cover;
+  color: white;
+  padding: 6rem 0;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.cta-button {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: transform 0.3s, background-color 0.3s;
+}
+
+.cta-button:hover {
+  background-color: #c0392b;
+  transform: translateY(-2px);
+}
+
+.services {
+  padding: 5rem 0;
+  background-color: #f8f9fa;
+}
+
+.services h2 {
+  text-align: center;
+  margin-bottom: 3rem;
+  font-size: 2.5rem;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 0 1rem;
+}
+
+.service-card {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+}
+
+.service-card h3 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+  
+  .hero p {
+    font-size: 1rem;
+  }
+  
+  .services h2 {
+    font-size: 2rem;
+  }
+}

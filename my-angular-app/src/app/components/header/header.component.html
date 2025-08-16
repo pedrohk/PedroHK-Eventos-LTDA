@@ -1,9 +1,23 @@
-<header>
-  <nav>
-    <ul>
-      <li><a routerLink="/">Home</a></li>
-      <li><a routerLink="/about">About</a></li>
-      <li><a routerLink="/contact">Contact</a></li>
+<header class="header">
+  <nav class="nav-container">
+    <div class="logo">
+      <a routerLink="/">
+        <h1>PedroHK Eventos</h1>
+      </a>
+    </div>
+    
+    <button class="mobile-menu" (click)="toggleMenu()" [class.active]="isMenuOpen">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <ul class="nav-links" [class.active]="isMenuOpen">
+      <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a></li>
+      <li><a routerLink="/servicos" routerLinkActive="active">Serviços</a></li>
+      <li><a routerLink="/portfolio" routerLinkActive="active">Portfólio</a></li>
+      <li><a routerLink="/sobre" routerLinkActive="active">Sobre</a></li>
+      <li><a routerLink="/contato" routerLinkActive="active">Contato</a></li>
     </ul>
   </nav>
 </header>

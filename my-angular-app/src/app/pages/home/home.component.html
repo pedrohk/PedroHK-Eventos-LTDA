@@ -1,34 +1,35 @@
-my-angular-app
-├── src
-│   ├── app
-│   │   ├── components
-│   │   │   ├── header
-│   │   │   │   ├── header.component.ts
-│   │   │   │   ├── header.component.html
-│   │   │   │   └── header.component.css
-│   │   │   └── footer
-│   │   │       ├── footer.component.ts
-│   │   │       ├── footer.component.html
-│   │   │       └── footer.component.css
-│   │   ├── pages
-│   │   │   └── home
-│   │   │       ├── home.component.ts
-│   │   │       ├── home.component.html
-│   │   │       └── home.component.css
-│   │   ├── services
-│   │   │   └── api.service.ts
-│   │   ├── models
-│   │   │   └── index.ts
-│   │   ├── app.component.ts
-│   │   ├── app.component.html
-│   │   ├── app.component.css
-│   │   ├── app.config.ts
-│   │   └── app.routes.ts
-│   ├── assets
-│   ├── styles.css
-│   ├── index.html
-│   └── main.ts
-├── package.json
-├── tsconfig.json
-├── angular.json
-└── README.md
+<section class="hero">
+  <div class="hero-content">
+    <h1>Eventos Extraordinários</h1>
+    <p>Transformando seus sonhos em realidade</p>
+    <button class="cta-button" (click)="scrollToServices()">Conheça Nossos Serviços</button>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="container">
+    <h2>Nossos Serviços</h2>
+    <div class="services-grid">
+      @for (service of services; track service.title) {
+        <article class="service-card">
+          <div class="service-content">
+            <h3>{{service.title}}</h3>
+            <p>{{service.description}}</p>
+            <a class="service-link" [routerLink]="['/servicos', service.title.toLowerCase()]">
+              Saiba mais
+              <span class="arrow">→</span>
+            </a>
+          </div>
+        </article>
+      }
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="container">
+    <h2>Pronto para realizar seu evento?</h2>
+    <p>Entre em contato conosco e vamos tornar seu evento inesquecível</p>
+    <button class="contact-button" routerLink="/contato">Fale Conosco</button>
+  </div>
+</section>
